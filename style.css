@@ -1,36 +1,95 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #7f5af0, #6246ea);
+  height: 100vh;
 }
 
-.container {
-  width: 400px;
-  margin: 60px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 6px;
-}
-
-h2 {
-  text-align: center;
-}
-
-.form {
+.app {
   display: flex;
-  gap: 10px;
+}
+
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  color: #fff;
+}
+
+h1 {
   margin-bottom: 20px;
 }
 
-input {
-  flex: 1;
-  padding: 8px;
+.card {
+  background: #ffffff15;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
-button {
-  padding: 8px 12px;
+.input-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.input-card input,
+.input-card select {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+.input-card button {
+  grid-column: span 2;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00ffa6;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.result p, h3 {
-  margin: 8px 0;
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card h2 {
+  margin: 10px 0 0;
+}
+
+.chart {
+  text-align: center;
+}
+#printBtn {
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #00ffa6;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.invoice {
+  display: none;
+  background: white;
+  color: black;
+  padding: 40px;
+  width: 700px;
 }

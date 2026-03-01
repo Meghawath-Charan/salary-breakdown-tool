@@ -1,45 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Salary Breakdown Tool</title>
+  <title>SalarySphere</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="container">
-    <h2>Salary Breakdown Tool</h2>
+  <div class="app">
 
-    <div class="form">
-      <input type="number" id="ctc" placeholder="Annual CTC (₹)">
-      <button id="calculate">Calculate</button>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>SalarySphere</h2>
+      <p>Smart Salary Dashboard</p>
     </div>
 
-    <div class="result">
-      <p>Basic Salary: ₹<span id="basic">0</span></p>
-      <p>HRA: ₹<span id="hra">0</span></p>
-      <p>PF: ₹<span id="pf">0</span></p>
-      <p>Tax (Approx): ₹<span id="tax">0</span></p>
-      <hr>
-      <h3>Monthly In-Hand: ₹<span id="inhand">0</span></h3>
+    <!-- Main -->
+    <div class="main">
+
+      <h1>Salary & Tax Calculator</h1>
+
+      <!-- Input Section -->
+      <div class="card input-card">
+        <input type="text" id="empName" placeholder="Employee Name">
+        <input type="text" id="company" placeholder="Company Name">
+        <input type="number" id="ctc" placeholder="Annual CTC (₹)">
+        <input type="number" id="bonus" placeholder="Bonus (₹)">
+
+        <select id="regime">
+          <option value="new">New Tax Regime</option>
+          <option value="old">Old Tax Regime</option>
+        </select>
+
+        <button id="calcBtn">Calculate Salary</button>
+      </div>
+
+      <!-- Dashboard Cards -->
+      <div class="dashboard">
+
+        <div class="card">
+          <h3>Monthly In-Hand</h3>
+          <h2 id="monthly">₹0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Yearly In-Hand</h3>
+          <h2 id="yearly">₹0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Total Tax</h3>
+          <h2 id="tax">₹0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Total Deductions</h3>
+          <h2 id="deduction">₹0</h2>
+        </div>
+        <div class="card">
+          <button id="printBtn">🧾 Generate Salary Invoice</button>
+        </div>
+        <div id="invoice" class="invoice">
+          <h2>Salary Slip</h2>
+          <p><b>Employee:</b> <span id="iName"></span></p>
+          <p><b>Company:</b> <span id="iCompany"></span></p>
+          <p><b>Annual CTC:</b> ₹<span id="iCtc"></span></p>
+          <p><b>Total Tax:</b> ₹<span id="iTax"></span></p>
+          <p><b>Total Deduction:</b> ₹<span id="iDed"></span></p>
+          <h3>Monthly In-Hand: ₹<span id="iMonthly"></span></h3>
+        </div>
+
+      </div>
+
+      <!-- Chart placeholder -->
+      <div class="card chart">
+        <h3>Salary Distribution</h3>
+        <div id="chartBox">Chart will appear after calculation</div>
+      </div>
+
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
-
-
-<!-- 
-
-Basic = 40% of CTC
-
-HRA = 40% of Basic
-
-PF = 12% of Basic
-
-Tax = 10% of CTC (approx)
-
-In-hand = (CTC − PF − Tax) ÷ 12
-
- -->
